@@ -1,0 +1,58 @@
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="level">
+                <div class="level-item">
+                    <div class="container">
+                        <div class="card">
+                            <header class="card-header">
+                                <p class="has-text-centered card-header-title">
+                                  Timer
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <form [formGroup]="timerOptions" (submit)="timerInit(TimerFormValue())" class="form" *ngIf="timerOptions">
+                                    <div class="field is-horizontal">
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input formControlName="hours"  type="number" class="input">
+                                                    <label class="label">Hours</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input formControlName="minutes" type="number" class="input">
+                                                    <label class="label">Minutes</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input formControlName="seconds" type="number" class="input">
+                                                    <label class="label">Seconds</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <div class="container">
+                                                <button class="button" type="submit">Start/Reset timer</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p class="has-text-centered title"><span>{{hours}}</span>h: <span>{{minutes}}</span>m: <span>{{seconds}}</span>s</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-footer-item" (click)="pauseTimer()" [class.active] = 'timerRunning'>Pause Timer</p>
+                                <p class="card-footer-item" (click)="timerInit()" [class.active] = '!timerRunning && timerExists'>Resume Timer</p>
+                                <p class="card-footer-item" (click)="stopTimer()" [class.active] = 'timerExists'>Stop Timer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+div.card-footer {
+    p.card-footer-item{
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    p.card-footer-item.active {
+        cursor: pointer;
+        pointer-events: all;
+        font-weight: bolder;
+        opacity: 1;
+    }
+    // p.card-footer-item.active:hover {
+    //     font-style: italic;
+    // }
+}
